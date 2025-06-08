@@ -58,6 +58,10 @@
   "scripts": {
     "compile": "tsc"
   },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/eltonr98/Codezart"
+  },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
     "typescript": "^5.3.3",

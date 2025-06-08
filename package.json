@@ -1,0 +1,66 @@
+{
+  "name": "codezart",
+  "displayName": "Codezart",
+  "description": "Mozart meets coding. Play musical notes while you code in your favorite key.",
+  "version": "0.0.1",
+  "publisher": "your-name-or-alias",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codezart.toggleSound",
+        "title": "Codezart: Toggle Sound"
+      },
+      {
+        "command": "codezart.selectScale",
+        "title": "Codezart: Select Scale"
+      }
+    ],
+    "configuration": {
+      "title": "Codezart",
+      "properties": {
+        "codezart.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Codezart audio playback"
+        },
+        "codezart.scale": {
+          "type": "string",
+          "default": "C_major",
+          "description": "Musical scale to use"
+        },
+        "codezart.triggerKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": ["\\n"],
+          "description": "Characters that trigger a note"
+        },
+        "codezart.customScales": {
+          "type": "object",
+          "default": {
+            "C_major": ["C4", "D4", "E4", "F4", "G4", "A4", "B4"],
+            "A_minor": ["A4", "B4", "C5", "D5", "E5", "F5", "G5"]
+          },
+          "description": "Define your own musical scales"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3",
+    "vsce": "^2.19.0"
+  }
+}
